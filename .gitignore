@@ -5,8 +5,8 @@ __pycache__
 .venv
 *.egg-info
 **/.build
-.idea
 
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+.idea/
