@@ -56,3 +56,7 @@ command.
  * `cdk docs`        open CDK documentation
 
 Enjoy!
+
+## Extra info:
+
+* Instalar librerías para el lambda de Python en AWS CDK. Se utiliza el método `create_dependencies_layer` en `AwsCdkMangumStack` el cual agrega una capa al lambda que se encarga del pip install.

@@ -20,10 +20,11 @@ class AwsCdkMangumStack(Stack):
             'FastAPI with Mangum',
             runtime=_lambda.Runtime.PYTHON_3_9,
             code=_lambda.Code.from_asset("fastapi_app"),
-            handler='main.handler',
+            handler='main.handler',  # name_of_file.mangum_handler_name
             layers=[self.create_dependencies_layer(self.stack_name, entrypoint_name)]
         )
 
+    # Finds the requirements.txt file and installs the needed dependencies for the lambda on a .build folder
     def create_dependencies_layer(self, project_name, function_name: str) -> _lambda.LayerVersion:
         requirements_file = f'{function_name}/requirements.txt'
         output_dir = f'{function_name}/.build'
